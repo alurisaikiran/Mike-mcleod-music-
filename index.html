@@ -3,12 +3,69 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Mike McLeod Music brings solo live event performance with a full-band sound for Atlanta weddings, parties, corporate events, and private celebrations.">
-  <meta property="og:title" content="Mike McLeod Music | Solo Performer, Full Band Sound">
-  <meta property="og:description" content="Atlanta live event musician Mike McLeod performs familiar songs with looping, guitar, vocals, and studio-quality sound.">
-  <meta property="og:image" content="https://mikemcleodmusic.com/wp-content/uploads/2023/11/site-pic-3.jpg">
+  <meta name="theme-color" content="#101010">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- Primary Meta -->
+  <title>Mike McLeod Music | Atlanta Live Event Musician</title>
+  <meta name="description" content="Hire Mike McLeod for your Atlanta wedding, corporate event, or private party. Solo performer with a full-band sound — guitar, keys, vocals, and live looping. Call 404-663-1407.">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Mike McLeod">
+  <link rel="canonical" href="https://mikemcleodmusic.com/">
+
+  <!-- Geo -->
+  <meta name="geo.region" content="US-GA">
+  <meta name="geo.placename" content="Atlanta, Georgia">
+
+  <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <title>Mike McLeod Music | Live Event Musician</title>
+  <meta property="og:site_name" content="Mike McLeod Music">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:url" content="https://mikemcleodmusic.com/">
+  <meta property="og:title" content="Mike McLeod Music | Atlanta Live Event Musician">
+  <meta property="og:description" content="Solo performer with a full-band sound. Mike McLeod brings guitar, keys, vocals, and live looping to Atlanta weddings, corporate events, and private parties.">
+  <meta property="og:image" content="https://mikemcleodmusic.com/wp-content/uploads/2023/11/main.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="800">
+  <meta property="og:image:alt" content="Mike McLeod performing live at an Atlanta event">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Mike McLeod Music | Atlanta Live Event Musician">
+  <meta name="twitter:description" content="Solo performer with a full-band sound. Guitar, keys, vocals, and live looping for Atlanta weddings, corporate events, and private parties.">
+  <meta name="twitter:image" content="https://mikemcleodmusic.com/wp-content/uploads/2023/11/main.jpg">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MusicGroup",
+    "name": "Mike McLeod Music",
+    "url": "https://mikemcleodmusic.com",
+    "logo": "https://mikemcleodmusic.com/wp-content/uploads/2023/11/main.jpg",
+    "image": "https://mikemcleodmusic.com/wp-content/uploads/2023/11/main.jpg",
+    "description": "Solo live event musician Mike McLeod delivers a full-band sound for Atlanta weddings, corporate events, and private parties using guitar, keys, vocals, and live looping.",
+    "telephone": "+14046631407",
+    "email": "MikeMcLeodMusic@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Atlanta",
+      "addressRegion": "GA",
+      "addressCountry": "US"
+    },
+    "areaServed": {
+      "@type": "State",
+      "name": "Georgia"
+    },
+    "sameAs": [
+      "https://www.facebook.com/MikeMcLeodMusic",
+      "https://www.youtube.com/@MikeMcLeodMusic"
+    ],
+    "genre": ["Classic Rock", "R&B", "Top 40", "Jazz", "Country", "Pop"],
+    "priceRange": "$$",
+    "foundingDate": "2003"
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -45,11 +102,17 @@
     .about-cta h2 { color: #fff; font-size: clamp(1.8rem, 3vw, 2.6rem); margin: 0; max-width: 500px; }
     .about-cta-buttons { display: flex; gap: 14px; flex-shrink: 0; }
     @media (max-width: 780px) {
-      .about-bio { grid-template-columns: 1fr; }
+      .about-bio { grid-template-columns: 1fr; padding: 55px 22px 60px; }
+      .about-photo { margin-bottom: 40px; }
       .about-photo-badge { right: 16px; }
+      .about-stats { grid-template-columns: repeat(3,1fr); gap: 10px; }
+      .about-stats div strong { font-size: 1.7rem; }
+      .about-text h2 { font-size: 1.9rem; }
+      .instruments-section { padding: 60px 22px; }
       .instruments-grid { grid-template-columns: repeat(2,1fr); }
+      .how-section { padding: 60px 22px; }
       .how-steps { grid-template-columns: 1fr; }
-      .about-cta { flex-direction: column; align-items: flex-start; }
+      .about-cta { padding: 50px 22px; flex-direction: column; align-items: flex-start; gap: 28px; }
       .about-photo-strip { grid-template-columns: repeat(2,1fr) !important; }
       .about-photo-strip img { height: 200px !important; }
     }
@@ -278,7 +341,7 @@
   <footer>
     <a class="logo" href="#home"><span>Mike</span> McLeod</a>
     <p>Solo performer. Full-band sound. Atlanta, GA. 404-663-1407.</p>
-    <div><a href="http://facebook.com/MikeMcLeodMusic" target="_blank" rel="noreferrer">Facebook</a><a href="http://www.youtube.com/@MikeMcLeodMusic" target="_blank" rel="noreferrer">YouTube</a><a href="mailto:MikeMcLeodMusic@gmail.com">Email</a></div>
+    <div><a href="http://facebook.com/MikeMcLeodMusic" target="_blank" rel="noopener noreferrer">Facebook</a><a href="http://www.youtube.com/@MikeMcLeodMusic" target="_blank" rel="noopener noreferrer">YouTube</a><a href="mailto:MikeMcLeodMusic@gmail.com">Email</a></div>
   </footer>
   <script src="script.js"></script>
 </body>
