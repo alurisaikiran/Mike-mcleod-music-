@@ -70,8 +70,23 @@ const revealObserver = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
+// Review cards — each slides up as it enters the viewport
+const cardObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('card-visible');
+      cardObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.review-card').forEach((card, i) => {
+  card.style.transitionDelay = `${(i % 3) * 80}ms`;
+  cardObserver.observe(card);
+});
+
 // Staggered card groups
-['.instrument-card', '.how-step', '.review-card'].forEach(sel => {
+['.instrument-card', '.how-step'].forEach(sel => {
   document.querySelectorAll(sel).forEach(el => {
     const siblings = Array.from(el.parentElement.querySelectorAll(sel));
     el.style.transitionDelay = `${siblings.indexOf(el) * 120}ms`;
