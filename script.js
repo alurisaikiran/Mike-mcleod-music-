@@ -70,20 +70,85 @@ const revealObserver = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-// Review cards — each slides up as it enters the viewport
-const cardObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('card-visible');
-      cardObserver.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.1 });
+// ── Review marquee ────────────────────────────────────────
+(function () {
+  const reviews = [
+    { text: "Mike did an amazing job performing at our New Year's Eve party!", name: "Adam C." },
+    { text: "Set list was great and added the perfect ambiance.", name: "Amy A." },
+    { text: "Such a talented guitar player.", name: "Angela C." },
+    { text: "All of our guests loved Mike.", name: "Angela S." },
+    { text: "Mike did a happy hour event for our clubhouse and was a hit!", name: "Anna W." },
+    { text: "All of our guests raved … hit of our party!", name: "Breana C." },
+    { text: "Mike was great at our Birthday party. Everyone had a great time.", name: "Brigitte H." },
+    { text: "Just what we were looking for.", name: "Dawn R." },
+    { text: "Such a fun evening!!", name: "Diane M." },
+    { text: "Music was awesome. Everyone loved it.", name: "Ed P." },
+    { text: "Evening was a great hit and such fun.", name: "Helen M." },
+    { text: "Will have him back next year. Thanks Mike!", name: "Highland P." },
+    { text: "Song selection was perfect.", name: "James C." },
+    { text: "Mike was amazing! Truly made the night memorable.", name: "Jason B." },
+    { text: "A huge hit.", name: "Jeannette D." },
+    { text: "Fantastic entertainer!!", name: "Jennifer D." },
+    { text: "Used Mike for my mom's 70th birthday. Sound quality was great.", name: "Jennifer N." },
+    { text: "Mike is top notch and highly recommend. We will use him again!", name: "Jim H." },
+    { text: "Mike, the one-man band, did a great job entertaining our party.", name: "Joel S." },
+    { text: "The hit of our party!", name: "John L." },
+    { text: "Hard to believe he's only one guy!", name: "John R." },
+    { text: "Mike was perfect for our 100+ person party.", name: "Julie W." },
+    { text: "Mike was a pleasure to work with and made our party rock.", name: "Jutta A." },
+    { text: "His music was perfect for my birthday party! Highly recommend!", name: "Kim Y." },
+    { text: "Gives off a great atmosphere.", name: "Krystal O." },
+    { text: "Elevated the energy.", name: "Kymberly D." },
+    { text: "Great job of reading the room. I would hire Mike again in a heartbeat.", name: "Leo R." },
+    { text: "Perfect musician for our party.", name: "Leslie K." },
+    { text: "Loved the music he chose for us! We would hire him again!", name: "Lisa W." },
+    { text: "Everyone absolutely loved his performance.", name: "Logan E." },
+    { text: "Happy hosts; delighted guests!", name: "Lucy D." },
+    { text: "Everyone was dancing.", name: "Martha M." },
+    { text: "Great job for my wife's 40th. Everyone really enjoyed his music!", name: "Mathew L." },
+    { text: "Mike really made the party!!", name: "Melissa C." },
+    { text: "Very interactive with the audience.", name: "Monty H." },
+    { text: "Mike is amazing.", name: "Nenad N." },
+    { text: "WONDERFUL in every way! Playlist is fantastic.", name: "Penny M." },
+    { text: "Weather moved us indoors but Mike still shined!", name: "Skip H." },
+    { text: "All the guests mentioned how impressed they were.", name: "Spencer M." },
+    { text: "The highlight of our graduation party. He is a fantastic musician.", name: "Stephan C." },
+    { text: "Great setlist and definitely brought the fun.", name: "Suzanne S." },
+    { text: "Beautiful, romantic and very unique.", name: "Tadser P." },
+    { text: "Highlight of our holiday party. Great voice, and extremely talented.", name: "Taylor S." },
+    { text: "His musical skills were top notch. Highly recommend!", name: "Travis R." },
+    { text: "Great experience! Highly recommend.", name: "Veronica E." },
+    { text: "We had a great time!", name: "Victor R." },
+  ];
 
-document.querySelectorAll('.review-card').forEach((card, i) => {
-  card.style.transitionDelay = `${(i % 3) * 80}ms`;
-  cardObserver.observe(card);
-});
+  const container = document.getElementById('review-marquee');
+  if (!container) return;
+
+  const rows = [
+    { cards: reviews.slice(0, 16),  dur: '42s', reverse: false },
+    { cards: reviews.slice(16, 31), dur: '54s', reverse: true  },
+    { cards: reviews.slice(31),     dur: '48s', reverse: false },
+  ];
+
+  rows.forEach(({ cards, dur, reverse }) => {
+    const row = document.createElement('div');
+    row.className = 'marquee-row' + (reverse ? ' reverse' : '');
+
+    const inner = document.createElement('div');
+    inner.className = 'marquee-inner';
+    inner.style.setProperty('--dur', dur);
+
+    [...cards, ...cards].forEach(r => {
+      const card = document.createElement('div');
+      card.className = 'marquee-card';
+      card.innerHTML = `<div class="stars">★★★★★</div><p>"${r.text}"</p><cite><strong>${r.name}</strong></cite>`;
+      inner.appendChild(card);
+    });
+
+    row.appendChild(inner);
+    container.appendChild(row);
+  });
+})();
 
 // Staggered card groups
 ['.instrument-card', '.how-step'].forEach(sel => {
@@ -202,8 +267,13 @@ if (photoGrid) {
   });
 }
 
-// ── Animated stars (Reviews page) ─────────────────────────
+// ── Animated stars (non-marquee only) ─────────────────────
 document.querySelectorAll('.stars').forEach(el => {
+  if (el.closest('.marquee-card')) {
+    // Inside marquee — show instantly, no observer
+    el.innerHTML = Array(5).fill('<span class="star lit">&#9733;</span>').join('');
+    return;
+  }
   el.innerHTML = Array(5).fill('<span class="star">&#9733;</span>').join('');
   new IntersectionObserver((entries) => {
     if (entries[0].isIntersecting) {
