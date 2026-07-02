@@ -75,18 +75,21 @@ h2 { margin: 0; max-width: 850px; font-size: clamp(3rem, 6vw, 5.8rem); line-heig
 .stats strong, .stats span { display: block; }
 .stats strong { font-family: "Archivo Black", sans-serif; font-size: 2.1rem; font-weight: 400; }
 .stats span { color: var(--muted); font-size: .72rem; }
-.setlist-section { background: var(--paper); padding: 110px 8vw; }
-.setlist-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 40px; }
+.setlist-section { background: var(--paper); padding: 70px 8vw; }
+.setlist-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 28px; }
 .setlist-header h2 { font-size: clamp(1.6rem, 2.5vw, 2.4rem); }
-.setlist-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 0 60px; }
+.setlist-columns { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0 40px; }
 .setlist-group { border-top: 2px solid var(--ink); }
 .setlist-genre-label { font-family: "Archivo Black", sans-serif; font-size: .62rem; letter-spacing: .16em; text-transform: uppercase; color: var(--rust); padding: 16px 0 14px; border-bottom: 1px solid var(--line); }
 .setlist-rows { list-style: none; margin: 0; padding: 0; }
-.setlist-rows li { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: baseline; column-gap: 16px; padding: 11px 0; border-bottom: 1px solid var(--line); transition: background .15s; }
+.setlist-rows li { position: relative; display: flex; align-items: baseline; gap: 6px; padding: 7px 0 7px 12px; border-bottom: 1px solid var(--line); transition: background .15s; }
+.setlist-rows li::before { content: ''; position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 3px; height: 0; background: var(--rust); border-radius: 2px; transition: height 0.2s ease; }
+.setlist-rows li:hover::before { height: 70%; }
 .setlist-rows li:hover .sl-title { color: var(--rust); }
 .sl-num { display: none; }
-.sl-title { font-size: .88rem; font-weight: 600; color: var(--ink); letter-spacing: -.01em; transition: color .15s; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.sl-artist { font-size: .7rem; color: var(--muted); font-style: italic; letter-spacing: .02em; white-space: nowrap; }
+.sl-title { font-size: .88rem; font-weight: 600; color: var(--ink); letter-spacing: -.01em; transition: color .15s; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; flex-shrink: 1; min-width: 0; }
+.sl-sep { font-size: .7rem; color: var(--line); flex-shrink: 0; }
+.sl-artist { font-size: .7rem; color: var(--muted); font-style: italic; letter-spacing: .02em; white-space: nowrap; flex-shrink: 0; }
 .section-heading { display: flex; align-items: end; justify-content: space-between; margin-bottom: 50px; }
 .track-list { border-top: 1px solid var(--line); }
 .track { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 20px; padding: 24px 8px; border-bottom: 1px solid var(--line); }
@@ -195,11 +198,6 @@ input:focus, select:focus, textarea:focus { border-bottom-color: var(--rust); }
   .float-call-link, .float-book-link { padding: 14px 16px; font-size: .66rem; }
 }
 
-/* ── Song row hover bar ─────────────────────────────────── */
-.setlist-rows li { position: relative; padding-left: 12px; transition: background .15s; }
-.setlist-rows li::before { content: ''; position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 3px; height: 0; background: var(--rust); border-radius: 2px; transition: height 0.2s ease; }
-.setlist-rows li:hover::before { height: 70%; }
-.setlist-rows li:hover .sl-title { color: var(--rust); }
 
 /* ── Interior pages ─────────────────────────────────────── */
 .page-hero { background: var(--ink); color: white; min-height: 36vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 9rem 8vw 4rem; }
@@ -289,10 +287,10 @@ input:focus, select:focus, textarea:focus { border-bottom-color: var(--rust); }
   .section { padding: 75px 22px; }
   .gallery { padding-top: 35px; }
   .release, .about, .booking { grid-template-columns: 1fr; }
-  .setlist-section { padding: 75px 22px; }
-  .setlist-header { align-items: flex-start; flex-direction: column; gap: 20px; }
+  .setlist-section { padding: 50px 22px; }
+  .setlist-header { align-items: flex-start; flex-direction: column; gap: 16px; }
   .setlist-columns { grid-template-columns: 1fr; gap: 0; }
-  .setlist-group + .setlist-group { margin-top: 40px; }
+  .setlist-group + .setlist-group { margin-top: 32px; }
   .release-art { min-height: 430px; }
   .album-title { top: 25px; left: 20px; font-size: 3.7rem; }
   .release-copy h2 { font-size: 4.4rem; }
