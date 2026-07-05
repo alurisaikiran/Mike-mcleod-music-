@@ -131,18 +131,18 @@
 </head>
 <body>
   <header class="site-header">
-    <a class="logo" href="index.html"><span>Mike</span> McLeod</a>
+    <a class="logo" href="index.html"><span>Mike</span> McLeod<small>Music</small></a>
     <button class="menu-button" type="button" aria-label="Open menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
     <nav>
       <a href="index.html">Home</a>
-      <a href="credentials.html">Credentials</a>
-      <a href="photos.html">Photos</a>
-      <a href="videos.html">Videos</a>
+      <a href="booking.html" class="active">Booking</a>
+      <a href="media.html">Media</a>
+      <a href="songs.html">Songs</a>
       <a href="reviews.html">Reviews</a>
+      <a href="clients.html">Clients</a>
       <a href="planning-guide.html">Planning</a>
-      <a class="nav-cta" href="booking.html">Booking</a>
     </nav>
   </header>
 
@@ -150,7 +150,7 @@
     <div class="page-hero" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.75) 100%), url('https://mikemcleodmusic.com/wp-content/uploads/2023/11/main.jpg'); background-size: cover; background-position: center 20%;">
       <p class="eyebrow">Booking / Contact</p>
       <h1>Ready to book amazing live music?</h1>
-      <p>Tell Mike about the date, number of hours, location, guest count, genres, and anything else that matters for the event.</p>
+      <p>Share a few details about your event and Mike will follow up with availability, a quote, and considerations to help you plan.</p>
     </div>
 
     <section class="booking creative" id="booking">
@@ -158,15 +158,14 @@
         <div class="bk-left-inner">
           <p class="eyebrow">Book Mike</p>
           <h2>Live music,<br><em>made easy.</em></h2>
-          <p class="bk-lead">Share a few details about your event and Mike will follow up with availability, a quote, and any planning notes worth thinking about.</p>
 
           <div class="bk-stats">
             <div class="bk-stat">
-              <strong>20+</strong>
-              <span>Years<br>Performing</span>
+              <strong>25+</strong>
+              <span>Years Live<br>in ATL</span>
             </div>
             <div class="bk-stat">
-              <strong>46</strong>
+              <strong>50+</strong>
               <span>Five-Star<br>Reviews</span>
             </div>
             <div class="bk-stat">
@@ -209,16 +208,15 @@
         <form>
           <label>Name<input required type="text" placeholder="Your name"></label>
           <label>Email<input required type="email" placeholder="you@example.com"></label>
-          <label>Event type<select><option>Private party</option><option>Wedding</option><option>Corporate event</option><option>Venue performance</option><option>Other</option></select></label>
+          <label>Event type<select><option>Private Party</option><option>Neighborhood / Community Event</option><option>Corporate / Non-Profit</option><option>Wedding</option><option>Rehearsal Dinner</option><option>Concert</option><option>Other</option></select></label>
           <label>Event date<input type="date"></label>
           <label>Duration<select><option value="">Select duration</option><option>1 hour</option><option>2 hours</option><option>3 hours</option><option>4 hours</option><option>5 hours</option><option>6+ hours</option></select></label>
-          <label>Location / Venue<input type="text" placeholder="Venue name &amp; address"></label>
+          <label>Location / Venue<input type="text" placeholder="Venue Name or City"></label>
           <label class="full">Anything else Mike should know<textarea rows="4" placeholder="Guest count, genre requests, special songs, indoor/outdoor..."></textarea></label>
           <button class="button primary full" type="submit">
             Send to Mike
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M2.01 21 23 12 2.01 3 2 10l15 2-15 2z"/></svg>
           </button>
-          <p class="bk-form-note">Deposit holds the date. Balance is due the day of the event.</p>
           <p class="form-message full" aria-live="polite"></p>
         </form>
       </div>
@@ -226,7 +224,7 @@
   </main>
 
   <footer>
-    <a class="logo" href="index.html"><span>Mike</span> McLeod</a>
+    <a class="logo" href="index.html"><span>Mike</span> McLeod<small>Music</small></a>
     <p>Solo performer. Full-band sound. Atlanta, GA. 404-663-1407.</p>
     <div class="footer-social">
       <a href="http://facebook.com/MikeMcLeodMusic" target="_blank" rel="noopener noreferrer" aria-label="Facebook">

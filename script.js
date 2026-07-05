@@ -203,7 +203,7 @@ if (statsEl) {
   }, { threshold: 0.5 }).observe(statsEl);
 }
 
-// ── Logo stagger + glow (Credentials) ─────────────────────
+// ── Logo stagger + glow (Clients) ─────────────────────────
 document.querySelectorAll('.logo-grid').forEach(grid => {
   new IntersectionObserver((entries) => {
     if (entries[0].isIntersecting) {

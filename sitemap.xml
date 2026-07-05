@@ -16,7 +16,7 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://mikemcleodmusic.com/credentials/</loc>
+    <loc>https://mikemcleodmusic.com/clients/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -26,12 +26,12 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://mikemcleodmusic.com/photos/</loc>
+    <loc>https://mikemcleodmusic.com/media/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://mikemcleodmusic.com/videos/</loc>
+    <loc>https://mikemcleodmusic.com/songs/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
