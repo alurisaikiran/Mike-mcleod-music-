@@ -8,7 +8,8 @@
 
   <!-- Primary Meta -->
   <title>Mike McLeod Music | Event Planning Guide</title>
-  <meta name="description" content="Every Step You Take — a step-by-step guide from Mike McLeod covering booking, song selection, volume, load-in, equipment, stage area, weather, and speeches.">
+  <meta name="description" content="Every Step You Take — Mike McLeod's step-by-step event planning guide covering booking, song selection, volume, load-in, equipment, stage area, weather backup plans, and PA use for speeches.">
+  <meta name="keywords" content="event planning musician Atlanta, wedding music planning, corporate event music planning, how to hire event musician, wedding processional planning">
   <meta name="robots" content="index, follow">
   <meta name="author" content="Mike McLeod">
   <link rel="canonical" href="https://mikemcleodmusic.com/planning-guide/">
@@ -51,6 +52,16 @@
       { "@type": "HowToStep", "position": 6, "name": "Stage Area", "text": "A dedicated stage is optional. Roughly 10×10 feet of space and one electrical outlet is enough. Close-proximity performances work great." },
       { "@type": "HowToStep", "position": 7, "name": "Weather", "text": "Outdoor events need a backup indoor location for rain or cold. Borderline conditions can be a 'game day decision.'" },
       { "@type": "HowToStep", "position": 8, "name": "Speeches, Toasts, Announcements", "text": "Mike's PA is available for speeches, toasts, and auctioneers. Announcements and full emcee services are available on request." }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://mikemcleodmusic.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Planning Guide", "item": "https://mikemcleodmusic.com/planning-guide/" }
     ]
   }
   </script>
@@ -125,13 +136,21 @@
     .pg-cta-contact span { color: rgba(255,255,255,.35); font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; }
 
     @media (max-width: 780px) {
-      .pg-timeline { padding-left: 50px; margin-top: 40px; }
+      html, body { overflow-x: hidden; max-width: 100vw; }
+      main { max-width: 100vw; overflow-x: hidden; }
+      .section { max-width: 100vw; overflow-x: hidden; box-sizing: border-box; }
+      .pg-intro { max-width: 100%; padding: 0; box-sizing: border-box; text-align: left; }
+      .pg-intro h2 { font-size: clamp(1.6rem, 5.5vw, 2rem); line-height: 1.2; max-width: 100%; overflow-wrap: break-word; word-wrap: break-word; word-break: break-word; hyphens: auto; }
+      .pg-intro p { font-size: .88rem; line-height: 1.7; max-width: 100%; overflow-wrap: break-word; word-wrap: break-word; }
+      .pg-timeline { padding-left: 50px; margin-top: 40px; max-width: 100%; box-sizing: border-box; }
       .pg-timeline::before { left: 20px; bottom: 40px; }
       .pg-step { padding-bottom: 40px; }
       .pg-step-num { left: -50px; width: 44px; height: 44px; font-size: 1.05rem; }
       .pg-step-body { padding: 22px 22px 24px; }
-      .pg-step h3 { font-size: 1.1rem; }
+      .pg-step h3 { font-size: 1.1rem; overflow-wrap: break-word; }
+      .pg-step p { overflow-wrap: break-word; word-wrap: break-word; }
       .pg-cta { padding: 60px 22px; }
+      .pg-cta h2 { font-size: clamp(1.6rem, 6vw, 2.2rem); overflow-wrap: break-word; }
       .pg-cta-inner { grid-template-columns: 1fr; gap: 28px; }
     }
   </style>
